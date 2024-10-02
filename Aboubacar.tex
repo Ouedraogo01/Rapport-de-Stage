@@ -1,7 +1,7 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm}
 \usepackage{setspace} % Package pour régler l'interligne
 \usepackage{tcolorbox}
 \usepackage{xcolor} % Pour utiliser des couleurs
@@ -9,116 +9,127 @@
 \usepackage{graphicx}
 \usepackage{tikz} % Pour dessiner
 \usepackage{amsmath} % Package pour des maths avancées
+\usepackage[french]{babel}    % Utilisation du français
+\usepackage{titlesec}         % Pour personnaliser le format des titres
+\renewcommand{\thechapter}{\Roman{chapter}}
+\titlespacing*{\section}{1.5cm}{*1}{*1}
+\titlespacing*{\subsection}{2.5cm}{*1}{*1}
+\titlespacing*{\subsubsection}{3.5cm}{*1}{*1}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{glossaries}
+
+% Personnalisation du format des chapitres
+\titleformat{\chapter}[hang]
+{\normalfont\LARGE\bfseries} % Style du texte (gros et en gras)
+{Chapitre \thechapter :}    % Format du titre avec "Chapitre" et numéro
+{20pt}                      % Espace entre "Chapitre X :" et le titre du chapitre
+{\LARGE\bfseries}            % Style du titre du chapitre (gros et en gras)
+
+%Définition des acronymes
+\newacronym{urcn}{URCN}{Unité de Recherche Clinique de Nanro}
+\newacronym{hdss}{HDSS}{Health and Demography System Surveillance}
+\newacronym{ssds}{SSDS}{Système de Surveillance Démographique et de la Santé}
+\newacronym{cma}{CMA}{Centre Médicale avec Antenne Chirugical}
+\newacronym{ubc}{UBC}{Université Privée Baba COULIBALY}
+\newacronym{isfp}{ISFP}{Institut Superieur des Filières Professionnalisantes}
+\newacronym{drco}{DRCO}{Direction Régionale du Centre Ouest}
+\newacronym{cnrst}{CNRST}{Centre National de la Recherche Scientifique et Technologique}
+\newacronym{irss}{IRSS}{Institut de Recherche en Science de la Santé}
+\newacronym{csps}{CSPS}{Centre de Santé et de Promotion Sociale}
+
+\makeglossaries
 
 \begin{document}
 
 		% Page de garde
 		\begin{titlepage}
+			\vspace*{-2cm}  % Ajustez la valeur pour réduire l'espace
+			
 			
 			\begin{tikzpicture}[remember picture, overlay]
-				% Dessiner un rectangle autour de la page, plus proche du texte et plus épais
+				% Dessiner un rectangle autour de la page, avec une marge plus importante
 				\draw[thick, color=blue, line width=5mm] 
-				(current page.south west) rectangle (current page.north east); % Rectangle de base
-				
-				\draw[thick, color=blue, line width=5mm] 
-				(current page.south west) rectangle ++(-0.5cm, 0.5cm) ++(0.5cm, -0.5cm); % Élargir la bordure
+				([xshift=1cm,yshift=-1cm]current page.south west) rectangle ([xshift=-1cm,yshift=1cm]current page.north east);
 			\end{tikzpicture}
 			
 			% En haut de la page : logo et texte à gauche, logo et texte à droite
 			\noindent
 			\begin{minipage}{0.45\textwidth}
 				\begin{flushleft} % Alignement à gauche
-					
 					\begin{center}
 						\textbf{\small MINISTERE DE L’ENSEIGNEMENT SUPERIEUR, DE LA RECHERCHE ET DE L’INNOVATION}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small **************}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small DIRECTION GENERALE DE L’ENSEIGNEMENT SUPERIEUR PRIVE}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small **************}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small UNIVERSITE PRIVEE BABA COULIUBBALY}
 					\end{center}
-					
 					\begin{center}
-						\begin{center}
-							
-						\end{center}
-						\includegraphics[width=3.5cm]{ubc.png} \\ % Réduire la taille du logo
-						\textbf{\small 01BP :3010 BOBO 01}\\
-						\textbf{\small TEL: 20-98-52-66}\\
-						\textbf{\small Site web: www.isfpburkina.org}    
+						\includegraphics[width=5cm]{ubc.png} \\ % Réduire la taille du logo
+						\textbf{\scriptsize 01BP :3010 BOBO 01}\\
+						\textbf{\scriptsize TEL: 20-98-52-66}\\
+						\textbf{\scriptsize Site web: www.isfpburkina.org}    
 					\end{center}
-					
 				\end{flushleft}
 			\end{minipage}
 			\hfill
 			\begin{minipage}{0.45\textwidth}
 				\begin{flushright} % Alignement à droite
-					
 					\begin{center}
 						\textbf{\small CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE ET TECHNOLOGIQUE (CNRST)}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small **************}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small INSTITUT DE RECHERCHE EN SCIENCE DE LA SANTE (IRSS)}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small **************}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small DIRECTION REGIONALE DU CENTRE-OUEST (DRCO)}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small **************}
 					\end{center}
-					
 					\begin{center}
 						\textbf{\small UNITE DE RECHERCHE CLINIQUE DE NANORO (URCN)}
 					\end{center}
-					
 					\begin{center}
-						\includegraphics[width=2cm]{logo-CNRST2.png} \\
-						\includegraphics[width=2cm]{irss.png} % Réduire la taille des logos
+						\includegraphics[width=2.3cm]{logo-CNRST2.png} \\
+						\includegraphics[width=2.3cm]{irss.png} % Réduire la taille des logos
 					\end{center}
 				\end{flushright}
 			\end{minipage}
 			
 			% Corps de la page
-			\vspace{0.3cm} % Ajouter un peu d'espace entre l'en-tête et le corps
+			\vspace{1cm} % Ajouter un peu plus d'espace entre l'en-tête et le corps
 			\begin{center}
 				\textcolor{black!70}{\textbf{\LARGE Rapport de fin de cycle}}\\[0.3cm]
 				
-				\textbf{\normalsize Présenté en vue de l'obtention du Diplôme de Licence professionnelle en Statistique et Informatique}\\[0.5cm]
+				\textbf{\small Présenté en vue de l'obtention du Diplôme de Licence professionnelle en Statistique et Informatique}\\[0.5cm]
 				
 				\textbf{\normalsize Période du stage : Septembre 2024 - Novembre 2024}\\[0.5cm]
 				
 				\textbf{\normalsize Thème : }\\[0.2cm]
 				
-				\begin{tcolorbox}[colframe=black, colback=white, sharp corners]
+				% Encadrer le thème en bleu avec des bordures arrondies
+				\begin{tcolorbox}[colframe=blue, colback=white, rounded corners, boxrule=0.5mm]
 					\textbf{\normalsize Analyse statistique des données : Étude sur ...}
 				\end{tcolorbox}
 				
 				\textbf{\normalsize Présenté par : OUEDRAOGO Aboubacar}\\[1cm]
 				
 			\end{center}
-			
 			
 			% En bas de page : noms des encadreurs et année académique
 			\begin{minipage}{0.45\textwidth} % Bloc gauche pour le maître de stage
@@ -135,12 +146,13 @@
 				\textbf{\small Maître de conférences à l’Université Nazi Boni, vacataire à l'ISFP}
 			\end{minipage}
 			
-			\vspace{0.4cm}
+			% Espacement pour pousser l'année académique vers le bas
+			\vfill
 			
+			% Année académique centrée en bas de page
 			\begin{center}
-				\textbf{\small}
+				\textbf{\normalsize Année académique : 2023-2024}
 			\end{center}
-			
 		\end{titlepage}
 	
 		% Saut de page après la dédicace
@@ -150,33 +162,28 @@
 	\pagenumbering{roman}
 	\renewcommand{\thepage}{\small\roman{page}}
 	
-	% Dédicace section
-	\begin{flushright} % Alignement à droite
-		\textbf{\Large Dédicace}
+	\chapter*{Dédicace}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Dédicace}  % Ajout à la table des matières
+	
+	\vspace*{5cm}  % Espace vertical pour centrer le texte
+
+	\begin{center}
+			\textit{À toute ma famille à qui je dois tout ce que je suis aujourd'hui et qui ne cesse de me soutenir en tout temps et tout lieu. \textbf{Famille OUEDRAOGO}.\\
+			Je profite de l’occasion pour vous exprimer toute ma reconnaissance.}
+	\end{center}	
 		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
 		
-		% Appliquer l'interligne 2
-		\setstretch{2}
-		
-		À toute ma famille à qui je dois tout ce que je suis aujourd'hui et qui ne cesse de me soutenir en tout temps et tout lieu. \textbf{Famille OUEDRAOGO}.\\
-		Je profite de l’occasion pour vous exprimer toute ma reconnaissance.
-	\end{flushright}
 	
 	\vspace{1.5cm}
 	
 	% Saut de page après la dédicace
 	\newpage
 	
-	\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Remerciements}
-
-			\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
+	\chapter*{Remerciements}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Remerciements}  % Ajout à la table des matières
 	
-	\end{flushright}
+	\vspace*{2cm}
+	
 	\setstretch{1.5}
 	
 	La réalisation de ce mémoire a été possible grâce à l'implication de plusieurs personnes à qui
@@ -198,21 +205,19 @@
 	% Saut de page après la dédicace
 	\newpage
 	
-	\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Avant-propos}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
+	\chapter*{Avant-propos}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Avant-propos}  % Ajout à la table des matières
+	
+	\vspace*{2cm}
+	
 	\setstretch{1.5}
 	
-	\subsection{\textbf{Présentation de la filière}}
+	\section*{Présentation de la filière}
+	\addcontentsline{toc}{section}{Présentation de la filière}  % Ajout à la table des matières
+	\vspace*{1cm}
 	
 	
-	
-	L'Université Privée Baba COULIBALY (UBC) EX ISFP (Institut Supérieur des Filières Professionnalisantes) forme depuis l’année universitaire 2019/2020 des étudiants pour la licence en Statistiques-Informatique. Ils ont pour mission d’assister les cadres supérieurs dans les prises de décision en environnement incertain. Pour accomplir leur mission, ils appliquent aux données recueillis les méthodes d’analyses statistiques et gèrent les bases de donnes des entreprises et des services. Les techniques statistiques appropriées permettent : d’organiser la collecte de l’information, d’analyser, résumer,
+	L'\gls{ubc} EX \gls{isfp} forme depuis l’année universitaire 2019/2020 des étudiants pour la licence en Statistiques-Informatique. Ils ont pour mission d’assister les cadres supérieurs dans les prises de décision en environnement incertain. Pour accomplir leur mission, ils appliquent aux données recueillis les méthodes d’analyses statistiques et gèrent les bases de données des entreprises et des services. Les techniques statistiques appropriées permettent : d’organiser la collecte de l’information, d’analyser, résumer,
 	segmenter des vastes ensembles de données, d’écrire, traiter, synthétiser des résultats d’enquête, d’analyser, décomposer, dessaisonnaliser, modéliser des séries chronologiques ; d’estimer
 	et tester les effets d’un ensemble de facteurs, de concevoir et planifier un sondage. L’entrée en
 	Statistiques et Informatique au niveau de l’Institut Supérieur des Filières Professionnalisantes
@@ -227,101 +232,102 @@
 	% Saut de page après la dédicace
 	\newpage
 	
-	\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Sommaire}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
 	
+	\chapter*{Liste des sigles et abréviations}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Liste des sigles et abréviations}  % Ajout à la table des matières
+	
+	\printglossary[type=\acronymtype]
+	
+	\vspace*{1cm}
 	% Saut de page après la dédicace
 	\newpage
 	
-		\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Liste des tableaux}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
-	
+	\chapter*{Résumé}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Résumé}  % Ajout à la table des matières
+	\vspace*{1cm}
 	% Saut de page après la dédicace
 	\newpage
 	
-		\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Liste des figures}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
 	
-	% Saut de page après la dédicace
-	\newpage
 	
-	\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Liste des sigles et abreviations}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
-	
-	% Saut de page après la dédicace
-	\newpage
-	
-	\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Résumé}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
-	
-		% Saut de page après la dédicace
-	\newpage
-	
-		\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Abstract}
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
-	
+	\chapter*{Abstract}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Abstract}  % Ajout à la table des matières
+	\vspace*{1cm}
 	% Saut de page après la dédicace
 	\newpage
 	
 	\pagenumbering{arabic}
-	
-	\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Introduction}
 		
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
-	
+	\chapter*{Introduction Générale}       % Chapitre non numéroté pour l'avant-propos
+	\addcontentsline{toc}{chapter}{Introduction Générale}  % Ajout à la table des matières
+	\vspace*{1cm}
 	% Saut de page après la dédicace
 	\newpage
 	
-		\begin{flushright} % Alignement à droite
-		% Remerciements section (aligné à gauche par défaut)
-		\textbf{\Large Approche théorique de l'étude}
-		
-		
-		\rule{0.8\linewidth}{0.4pt} % Barre horizontale prenant 50 % de la largeur de la ligne
-		\vspace{0.5cm}
-		
-	\end{flushright}
 	
+	\chapter{Présentation théorique de l'étude}
+
+
+	\chapter{Cadre de l'étude}	
+		\section{Zone de l'étude}
+			\subsection{Contexte géographique}
+			
+			Nanoro est un village qui est situé à 85 Km de Ouagadougou, la capitale du Burkina Faso et à 75 Km de Koudougou, chef-lieu de région. Le district sanitaire de Nanoro est l'un des sept(7) districts sanitaire de la région du Centre Ouest. Le \gls{ssds} de Nanoro est circonscrit dans le district sanitaire de Nanoro. La zone de l'observatoire se situe entre les longitudes 1°92537 et 2°3146 Ouest et les latitudes 12°57955 et 12°72863 Nord et couvre une surperficie de 600 Km². Le climat qui y règne est de type soudano-sahélien marqué par deux (2) saisons : Une saison pluvieuse de mai à octobre au cours de laquelle est retenues d'eau sont approvisionnées et deviennent le lieu privilégié de prolifération des agents vecteurs du paudisme et une saison sèche de novembre à avril caracterisée par le harmattan période pendant laquee il y a augmentation des symmptômes des infections respiratoires. La pluviométrie est capricieuse et inégalement répartie dans e temps et dans l'espace. Ele varie entre 450 mm et 700 mm d'eau par an le relief est majoritairement plat avec quellques collines.
+			
+			\subsection{Contexte démographique}
+			
+			La première surveillance a eu lieu en mars 2009 et rs du recensement initia plus de 53 000 habitants nt été enregistrés. Le SSDS couvre actuellement une population de près de 65 500. Il compte environ 9 000 ménages pour 5 000 concessins répartis dans 24 villages regroupés dans deux (02) communes rurales : Nanoro et Soaw. Le rapport de masculinité de 76\% (DERRA et al. 2013) montre que les femmes sont plus nombreuses que les hommes. Le taux de croissance annuel 2,9\% (DERRA et al. 2013) est légèrement inférieur à celui du niveau national qui était de 3,10\% (INSD, 2006). Il ressort des analyses que 7 individus meurent par an sur 1000 habitants sur le site de surveillance. En observant la pyramide des âges de la population de l'observatoire (figure4), on remarque qu'elle est typique aux pays en développement avec : une population très jeune, une croissance rapide de la population, une mortalité élevée surtout à l'enfance et aux vieux âges, une surmortalité masculine et une foorte migration chez les hommes aux âges économiquement actifs.
+			
+			\subsection{Contexte économique}
+			
+			Tout comme le Burkina Faso, l'observatoire de la Population de Nanro est une zone à vocation agro-pastorale. En effet, plus de la moitié de la population a pour occupation l'agriculture, l'élevage de subsistance et le commerce. Les salariés (privé ou pubic) ne représente que 2,5\% de la population résidente (DERRA et al. 2013).
+			
+			\subsection{Contexte socioculturel et sanitaire}
+			
+			La population du SSDS est majoritairement analphabete et très peu instruite soit 3/4 de la population. En effet seulement 20,70\% ont atteint le niveau primaire, 4,60\% le niveau secondaire et 0.20\% le niveau supérieur (DERRA et al. 2013). L'observatoire de population de Nanoro est dominé par trois (03) groupes ethniques. Les Mossis constituent l'ethnie majoritaire avec 90\%, ensuite viennent les Gourounsis avec 7,9\% et enfin l'ethnie Peulh ferme la marge avec 1,7\%. L'offre sanitaire est fournie par dix (10) \gls{csps} et un hôpital de référence, le \gls{cma} saint Camille de Nanoro.
+			
+		\section{Lieu du stage}
+			\subsection{Généralité}
+			
+			L'\gls{urcn} est l'un des centres de recherche en santé au Burkina Faso qui effectue des essais cliniques depuis les années 2000 (DERRA et a. 2012) dans le district sanitaire de Nanoro. Il a été formellement inauguré en Avril 2009 par le Ministre de la Santé Seydou BOUDA dans le cadre de la mise en oeuvre de l'essai vaccinal contre le paludisme (RTSS, S) chez plus de 1281 enfants de la zone (Tinto et al. 2014). L'URCN travaille en collaboration avec le Centre Médicale Saint Camille (CMA) de Nanoro, hôpital de référence du district dans lequel il est logé. La mission de l'unité est de contribuer à la rationalisation des soins de santé pour les populations vivants dans les pays tropicaux, avec un accent particulier sur le paludisme, en fournissant une excellente plate-forme pour la formation et la recherche en maladies tropicales conformes aux normes internationales. Les services comme \textbf{la Clinique, le Laboratoire, la Pharmacie, le Data Management, le Système de Surveillance Démographique et de Santé (SSDS) et les pôles d'appui} sont en son sein.
+			
+			\subsection{Organigramme de l'\gls{urcn}}
+			
+			L'Unité de Recherche Clinique de Nanoro est oorganisée de la façon suivante selon le schéma ci-dessous.
+			
+			\subsection{Description des différentes sections de recherche}
+			
+				\subsubsection{La Clinique}
+				
+				Le service clinique est le service dont s'occupe \textbf{Dr SME M. Athanase} où des suivis et des soins médicaux sont faits pour les participants aux études de l'unité. Ces participants sont généralements des enfants et des femmes enceintes. Ce service est constitué de \textbf{médecins, d'infirmiers, d'agents itinérants de santé, des accoucheuses ou sage-femmes et d'agents de terrain}.
+				
+				\subsubsection{Le Laboratoire}
+				
+				La section laboratoire, sous la Direction du \textbf{Dr NATAMA H. Magloire}, est subdivisé en deux entités : un \textbf{laboratoire clinique et un laboratoire de recherche}.\textbf{Le laboratoire clinique} assure les différentes analyses et tests médicaux (hématologie, biochimie, microbiologie, parasitologie...) des participants d'études et est sous la responsabiité de \textbf{Dr TAHITA Marc Christian}. \textbf{Le laboratoire de recherche} fait de la recherche fondamentale en biologie moléculaire, immunologie, de la génétique humaine... Il est sous la responsabilité du \textbf{Dr SONDO Paul}.
+				
+				\subsubsection{La Pharmacie}
+				
+				La pharmacie est le service qui intervient dans la gestion et l'administration des différents vaccins et médicaments aux sujets d'études. Il possède un " vaccine management " \textbf{Dr OUEDRAOGO Florence}, responsable de la section, \textbf{une pharmacienne} et \textbf{des agents de vaccinations et d'administration de produit} dont le rôle est de donner directement les vaccins et produits aux participants d'études.
+				
+				\subsubsection{Le Data Management}
+				
+				C'est le service qui gère l'ensemble des données de l'URCN. Cette section est sous la direction de \textbf{Dr ROUAMBA Toussaint}. Ce service s'occupe de la saisie des données récoltées sur le terrain par les différents agents de terrains et de la gestion des bases de données résultantes. Il est formé par des gestionnaires des bases de dnnées et des agents de saisie.
+				
+				\subsubsection{Système de Surveillance Démgraphique et de la Santé (\gls{ssds})}
+				
+				Le \textbf{SSDS ou HDSS} (Health and Demography System Surveillance en anglais) est la section chargée de collecter et de mettre à disposition des données populationnelles à jour aux différents projets de recherche de l'unité. Le HDSS est managé par \textbf{Monsieur Karim DERRA Démgraphe} dépuis sa création. Avec son équipe, ils collectent réguilèrement des données, tous les quatre (04) mois, dans les ménages de la zone d'étude. En plus des données démographique, ils collectent des données sanitaires, écnmiques et culturelles par des agents de terrain qui sont chargés de recueillir directement les informations dans les ménages sous la responsabilité de chefs d'équipes, les superviseurs dont le rôle est de contrôler le travail des agents et corriger les  évantuelles erreurs (DERRA et al. 2012).
+				
+			\subsection{Missions et Principes de l'URCN}
+				\subsubsection{Mission de l'URCN}
+				
+				La mission directrice de l'URCN est de renforcer la base rationnelle des soins de santé pour les populations vivant dans les pays tropicaux.
+				
+				\subsubsection{Principes de l'URCN}
+				
+				
+				
+			
+	
+		\tableofcontents              % Génère la table des matières	
+
 \end{document}
