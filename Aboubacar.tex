@@ -1,160 +1,143 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm}
-\usepackage{setspace} % Package pour régler l'interligne
-\usepackage{tcolorbox}
-\usepackage{xcolor} % Pour utiliser des couleurs
-% Pour inclure un logo
-\usepackage{graphicx}
-\usepackage{tikz} % Pour dessiner
-\usepackage{amsmath} % Package pour des maths avancées
-\usepackage[french]{babel}    % Utilisation du français
-\usepackage{titlesec}         % Pour personnaliser le format des titres
-\renewcommand{\thechapter}{\Roman{chapter}}
-\titlespacing*{\section}{1.5cm}{*1}{*1}
-\titlespacing*{\subsection}{2.5cm}{*1}{*1}
-\titlespacing*{\subsubsection}{3.5cm}{*1}{*1}
+\usepackage[french]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-\usepackage{glossaries}
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[Genny]{fncychap}
+\newtheorem{propriete}{Propriété}[section]
+\usepackage{fancyhdr}
+\linespread{1.5}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{etoc}
+\usepackage[left=1.5cm, right=1.5cm,bottom=1.5cm,top=1cm]{geometry}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc}
+\definecolor{mycolor}{HTML}{0000FF}
+\definecolor{moncolor}{HTML}{808080}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tabularray}
+\UseTblrLibrary{amsmath,booktabs,counter,diagbox,siunitx,varwidth}
+\usepackage{tocloft}
 
-% Personnalisation du format des chapitres
-\titleformat{\chapter}[hang]
-{\normalfont\LARGE\bfseries} % Style du texte (gros et en gras)
-{Chapitre \thechapter :}    % Format du titre avec "Chapitre" et numéro
-{20pt}                      % Espace entre "Chapitre X :" et le titre du chapitre
-{\LARGE\bfseries}            % Style du titre du chapitre (gros et en gras)
+\usepackage{titlesec}  % Package pour personnaliser les titres
 
-%Définition des acronymes
-\newacronym{urcn}{URCN}{Unité de Recherche Clinique de Nanro}
-\newacronym{hdss}{HDSS}{Health and Demography System Surveillance}
-\newacronym{ssds}{SSDS}{Système de Surveillance Démographique et de la Santé}
-\newacronym{cma}{CMA}{Centre Médicale avec Antenne Chirugical}
-\newacronym{ubc}{UBC}{Université Privée Baba COULIBALY}
-\newacronym{isfp}{ISFP}{Institut Superieur des Filières Professionnalisantes}
-\newacronym{drco}{DRCO}{Direction Régionale du Centre Ouest}
-\newacronym{cnrst}{CNRST}{Centre National de la Recherche Scientifique et Technologique}
-\newacronym{irss}{IRSS}{Institut de Recherche en Science de la Santé}
-\newacronym{csps}{CSPS}{Centre de Santé et de Promotion Sociale}
+\titleformat{\chapter}[hang] % Formater le titre des chapitres
+{\normalfont\LARGE\bfseries}  % Style du texte (gros et en gras)
+{Chapitre \thechapter{} :}    % Ajouter "Chapitre" suivi du numéro en chiffre romain
+{20pt}                        % Espace entre "Chapitre X :" et le titre
+{\LARGE\bfseries}             % Style du titre du chapitre
+\renewcommand{\thechapter}{\Roman{chapter}}  % Numérotation des chapitres en chiffres romains
 
-\makeglossaries
 
 \begin{document}
-
-		% Page de garde
-		\begin{titlepage}
-			\vspace*{-2cm}  % Ajustez la valeur pour réduire l'espace
-			
-			
-			\begin{tikzpicture}[remember picture, overlay]
-				% Dessiner un rectangle autour de la page, avec une marge plus importante
-				\draw[thick, color=blue, line width=5mm] 
-				([xshift=1cm,yshift=-1cm]current page.south west) rectangle ([xshift=-1cm,yshift=1cm]current page.north east);
-			\end{tikzpicture}
-			
-			% En haut de la page : logo et texte à gauche, logo et texte à droite
-			\noindent
-			\begin{minipage}{0.45\textwidth}
-				\begin{flushleft} % Alignement à gauche
-					\begin{center}
-						\textbf{\small MINISTERE DE L’ENSEIGNEMENT SUPERIEUR, DE LA RECHERCHE ET DE L’INNOVATION}
-					\end{center}
-					\begin{center}
-						\textbf{\small **************}
-					\end{center}
-					\begin{center}
-						\textbf{\small DIRECTION GENERALE DE L’ENSEIGNEMENT SUPERIEUR PRIVE}
-					\end{center}
-					\begin{center}
-						\textbf{\small **************}
-					\end{center}
-					\begin{center}
-						\textbf{\small UNIVERSITE PRIVEE BABA COULIUBBALY}
-					\end{center}
-					\begin{center}
-						\includegraphics[width=5cm]{ubc.png} \\ % Réduire la taille du logo
-						\textbf{\scriptsize 01BP :3010 BOBO 01}\\
-						\textbf{\scriptsize TEL: 20-98-52-66}\\
-						\textbf{\scriptsize Site web: www.isfpburkina.org}    
-					\end{center}
-				\end{flushleft}
-			\end{minipage}
-			\hfill
-			\begin{minipage}{0.45\textwidth}
-				\begin{flushright} % Alignement à droite
-					\begin{center}
-						\textbf{\small CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE ET TECHNOLOGIQUE (CNRST)}
-					\end{center}
-					\begin{center}
-						\textbf{\small **************}
-					\end{center}
-					\begin{center}
-						\textbf{\small INSTITUT DE RECHERCHE EN SCIENCE DE LA SANTE (IRSS)}
-					\end{center}
-					\begin{center}
-						\textbf{\small **************}
-					\end{center}
-					\begin{center}
-						\textbf{\small DIRECTION REGIONALE DU CENTRE-OUEST (DRCO)}
-					\end{center}
-					\begin{center}
-						\textbf{\small **************}
-					\end{center}
-					\begin{center}
-						\textbf{\small UNITE DE RECHERCHE CLINIQUE DE NANORO (URCN)}
-					\end{center}
-					\begin{center}
-						\includegraphics[width=2.3cm]{logo-CNRST2.png} \\
-						\includegraphics[width=2.3cm]{irss.png} % Réduire la taille des logos
-					\end{center}
-				\end{flushright}
-			\end{minipage}
-			
-			% Corps de la page
-			\vspace{1cm} % Ajouter un peu plus d'espace entre l'en-tête et le corps
-			\begin{center}
-				\textcolor{black!70}{\textbf{\LARGE Rapport de fin de cycle}}\\[0.3cm]
-				
-				\textbf{\small Présenté en vue de l'obtention du Diplôme de Licence professionnelle en Statistique et Informatique}\\[0.5cm]
-				
-				\textbf{\normalsize Période du stage : Septembre 2024 - Novembre 2024}\\[0.5cm]
-				
-				\textbf{\normalsize Thème : }\\[0.2cm]
-				
-				% Encadrer le thème en bleu avec des bordures arrondies
-				\begin{tcolorbox}[colframe=blue, colback=white, rounded corners, boxrule=0.5mm]
-					\textbf{\normalsize Analyse statistique des données : Étude sur ...}
-				\end{tcolorbox}
-				
-				\textbf{\normalsize Présenté par : OUEDRAOGO Aboubacar}\\[1cm]
-				
-			\end{center}
-			
-			% En bas de page : noms des encadreurs et année académique
-			\begin{minipage}{0.45\textwidth} % Bloc gauche pour le maître de stage
-				\raggedright
-				\textbf{\small Maître de stage :}\\[0.3cm]
-				\textbf{\small M. Karim DERRA}\\
-				\textbf{\small Statisticien Démographe à l'URCN}
-			\end{minipage}
-			\hfill
-			\begin{minipage}{0.45\textwidth} % Bloc droit pour le directeur de rapport
-				\raggedleft
-				\textbf{\small Directeur de rapport :}\\[0.3cm]
-				\textbf{\small Dr Moussa BARRO}\\
-				\textbf{\small Maître de conférences à l’Université Nazi Boni, vacataire à l'ISFP}
-			\end{minipage}
-			
-			% Espacement pour pousser l'année académique vers le bas
-			\vfill
-			
-			% Année académique centrée en bas de page
-			\begin{center}
-				\textbf{\normalsize Année académique : 2023-2024}
-			\end{center}
-		\end{titlepage}
+	\renewcommand{\tablename}{Tableau}
 	
+	\newcommand{\innerMargin}{0.5cm}
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[
+		line width=3pt,
+		color=mycolor,
+		]
+		([xshift=\innerMargin, yshift=-\innerMargin]current page.north west)
+		rectangle
+		([xshift=-\innerMargin, yshift=\innerMargin]current page.south east);
+	\end{tikzpicture}
+	
+	\noindent
+	\pagestyle{empty}
+	
+	\begin{minipage}[t]{0.45\textwidth}
+		\fontsize{10pt}{0.45cm}\selectfont
+		\begin{center}
+			MINISTERE DE L'ENSEIGNEMENT SUPERIEUR, DE LA RECHERCHE ET DE L'INNOVATION\\
+			************** \\
+			SECRETARIAT GENERAL\\
+			************** \\
+			DIRECTION GENERALE DE L’ENSEIGNEMENT SUPERIEUR\\
+			************** \\
+			INSTITUT SUPERIEUR DES FILIERES PROFESSIONNALISANTES \vspace*{0.7cm}
+			
+			\includegraphics[scale=0.20]{isfp.png}
+			
+		\end{center}
+		
+	\end{minipage}
+	\hspace{0.1\textwidth}
+	\noindent
+	\begin{minipage}[t]{0.45\textwidth}
+		\fontsize{10pt}{0.4cm}\selectfont
+		\begin{center}
+			CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE ET TECHNOLOGIQUE (CNRST)\\
+			************** \\
+			INSTITUT DE RECHERCHE EN SCIENCES DE LA SANTE (IRSS)\\
+			************** \\
+			DIRECTION REGIONALE DU CENTRE-OUEST (DRCO)\\
+			************** \\
+			UNITE DE RECHERCHE CLINIQUE DE NANORO (URCN)\\ \vspace{0.4cm}
+			\includegraphics[scale=0.25]{urcn1.png}
+		\end{center}
+		
+	\end{minipage}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textcolor{black!70}{\textbf{\LARGE Rapport de fin de cycle}}\\
+		\large En vue de l'obtention du Diplôme de \\
+		\textbf{LICENCE PROFESSIONNELLE}\\
+		\large En Statistique et Informatique\\
+	\end{center}
+	
+	\begin{center}
+		\large{THEME:}\normalsize\\
+		
+		\begin{tcolorbox}[colback=moncolor, colframe=moncolor, width=1\textwidth, boxrule=0.6mm, arc=1mm ]
+			\centering
+			\textbf{\Large{Analyse statistique des données : Étude sur la natalité, mortalité infantile dans la commune de Nanoro.}}
+		\end{tcolorbox}
+	\end{center}
+	\begin{center}
+		Présenté par : \textbf{OUEDRAOGO Aboubacar}
+	\end{center}
+	
+	\begin{minipage}{0.65\textwidth}
+		\textbf{\underline{Directeur de rapport}}\\
+		Dr Moussa BARRO\\
+		Maître de conférences à l’Université Nazi Boni,\\
+		vacataire à l'ISFP
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		\textbf{\underline{Maître de stage}}\\
+		M. Karim DERRA\\
+		Statisticien Démographe à l'URCN
+	\end{minipage}
+	
+	\vspace{1.5cm}
+	\begin{center}
+		Année académique 2023-2024
+	\end{center}
+	
+	\thispagestyle{empty}
+	\newgeometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+	
+
 		% Saut de page après la dédicace
 		\newpage
 	
@@ -217,7 +200,7 @@
 	\vspace*{1cm}
 	
 	
-	L'\gls{ubc} EX \gls{isfp} forme depuis l’année universitaire 2019/2020 des étudiants pour la licence en Statistiques-Informatique. Ils ont pour mission d’assister les cadres supérieurs dans les prises de décision en environnement incertain. Pour accomplir leur mission, ils appliquent aux données recueillis les méthodes d’analyses statistiques et gèrent les bases de données des entreprises et des services. Les techniques statistiques appropriées permettent : d’organiser la collecte de l’information, d’analyser, résumer,
+	L'ISFP forme depuis l’année universitaire 2019/2020 des étudiants pour la licence en Statistiques-Informatique. Ils ont pour mission d’assister les cadres supérieurs dans les prises de décision en environnement incertain. Pour accomplir leur mission, ils appliquent aux données recueillis les méthodes d’analyses statistiques et gèrent les bases de données des entreprises et des services. Les techniques statistiques appropriées permettent : d’organiser la collecte de l’information, d’analyser, résumer,
 	segmenter des vastes ensembles de données, d’écrire, traiter, synthétiser des résultats d’enquête, d’analyser, décomposer, dessaisonnaliser, modéliser des séries chronologiques ; d’estimer
 	et tester les effets d’un ensemble de facteurs, de concevoir et planifier un sondage. L’entrée en
 	Statistiques et Informatique au niveau de l’Institut Supérieur des Filières Professionnalisantes
@@ -236,7 +219,6 @@
 	\chapter*{Liste des sigles et abréviations}       % Chapitre non numéroté pour l'avant-propos
 	\addcontentsline{toc}{chapter}{Liste des sigles et abréviations}  % Ajout à la table des matières
 	
-	\printglossary[type=\acronymtype]
 	
 	\vspace*{1cm}
 	% Saut de page après la dédicace
@@ -272,7 +254,7 @@
 		\section{Zone de l'étude}
 			\subsection{Contexte géographique}
 			
-			Nanoro est un village qui est situé à 85 Km de Ouagadougou, la capitale du Burkina Faso et à 75 Km de Koudougou, chef-lieu de région. Le district sanitaire de Nanoro est l'un des sept(7) districts sanitaire de la région du Centre Ouest. Le \gls{ssds} de Nanoro est circonscrit dans le district sanitaire de Nanoro. La zone de l'observatoire se situe entre les longitudes 1°92537 et 2°3146 Ouest et les latitudes 12°57955 et 12°72863 Nord et couvre une surperficie de 600 Km². Le climat qui y règne est de type soudano-sahélien marqué par deux (2) saisons : Une saison pluvieuse de mai à octobre au cours de laquelle est retenues d'eau sont approvisionnées et deviennent le lieu privilégié de prolifération des agents vecteurs du paudisme et une saison sèche de novembre à avril caracterisée par le harmattan période pendant laquee il y a augmentation des symmptômes des infections respiratoires. La pluviométrie est capricieuse et inégalement répartie dans e temps et dans l'espace. Ele varie entre 450 mm et 700 mm d'eau par an le relief est majoritairement plat avec quellques collines.
+			Nanoro est un village qui est situé à 85 Km de Ouagadougou, la capitale du Burkina Faso et à 75 Km de Koudougou, chef-lieu de région. Le district sanitaire de Nanoro est l'un des sept(7) districts sanitaire de la région du Centre Ouest. Le SSDS de Nanoro est circonscrit dans le district sanitaire de Nanoro. La zone de l'observatoire se situe entre les longitudes 1°92537 et 2°3146 Ouest et les latitudes 12°57955 et 12°72863 Nord et couvre une surperficie de 600 Km². Le climat qui y règne est de type soudano-sahélien marqué par deux (2) saisons : Une saison pluvieuse de mai à octobre au cours de laquelle est retenues d'eau sont approvisionnées et deviennent le lieu privilégié de prolifération des agents vecteurs du paudisme et une saison sèche de novembre à avril caracterisée par le harmattan période pendant laquee il y a augmentation des symmptômes des infections respiratoires. La pluviométrie est capricieuse et inégalement répartie dans e temps et dans l'espace. Ele varie entre 450 mm et 700 mm d'eau par an le relief est majoritairement plat avec quellques collines.
 			
 			\subsection{Contexte démographique}
 			
@@ -284,14 +266,14 @@
 			
 			\subsection{Contexte socioculturel et sanitaire}
 			
-			La population du SSDS est majoritairement analphabete et très peu instruite soit 3/4 de la population. En effet seulement 20,70\% ont atteint le niveau primaire, 4,60\% le niveau secondaire et 0.20\% le niveau supérieur (DERRA et al. 2013). L'observatoire de population de Nanoro est dominé par trois (03) groupes ethniques. Les Mossis constituent l'ethnie majoritaire avec 90\%, ensuite viennent les Gourounsis avec 7,9\% et enfin l'ethnie Peulh ferme la marge avec 1,7\%. L'offre sanitaire est fournie par dix (10) \gls{csps} et un hôpital de référence, le \gls{cma} saint Camille de Nanoro.
+			La population du SSDS est majoritairement analphabete et très peu instruite soit 3/4 de la population. En effet seulement 20,70\% ont atteint le niveau primaire, 4,60\% le niveau secondaire et 0.20\% le niveau supérieur (DERRA et al. 2013). L'observatoire de population de Nanoro est dominé par trois (03) groupes ethniques. Les Mossis constituent l'ethnie majoritaire avec 90\%, ensuite viennent les Gourounsis avec 7,9\% et enfin l'ethnie Peulh ferme la marge avec 1,7\%. L'offre sanitaire est fournie par dix (10) CSPS et un hôpital de référence, le CMA saint Camille de Nanoro.
 			
 		\section{Lieu du stage}
 			\subsection{Généralité}
 			
-			L'\gls{urcn} est l'un des centres de recherche en santé au Burkina Faso qui effectue des essais cliniques depuis les années 2000 (DERRA et a. 2012) dans le district sanitaire de Nanoro. Il a été formellement inauguré en Avril 2009 par le Ministre de la Santé Seydou BOUDA dans le cadre de la mise en oeuvre de l'essai vaccinal contre le paludisme (RTSS, S) chez plus de 1281 enfants de la zone (Tinto et al. 2014). L'URCN travaille en collaboration avec le Centre Médicale Saint Camille (CMA) de Nanoro, hôpital de référence du district dans lequel il est logé. La mission de l'unité est de contribuer à la rationalisation des soins de santé pour les populations vivants dans les pays tropicaux, avec un accent particulier sur le paludisme, en fournissant une excellente plate-forme pour la formation et la recherche en maladies tropicales conformes aux normes internationales. Les services comme \textbf{la Clinique, le Laboratoire, la Pharmacie, le Data Management, le Système de Surveillance Démographique et de Santé (SSDS) et les pôles d'appui} sont en son sein.
+			L'URCN est l'un des centres de recherche en santé au Burkina Faso qui effectue des essais cliniques depuis les années 2000 (DERRA et a. 2012) dans le district sanitaire de Nanoro. Il a été formellement inauguré en Avril 2009 par le Ministre de la Santé Seydou BOUDA dans le cadre de la mise en oeuvre de l'essai vaccinal contre le paludisme (RTSS, S) chez plus de 1281 enfants de la zone (Tinto et al. 2014). L'URCN travaille en collaboration avec le Centre Médicale Saint Camille (CMA) de Nanoro, hôpital de référence du district dans lequel il est logé. La mission de l'unité est de contribuer à la rationalisation des soins de santé pour les populations vivants dans les pays tropicaux, avec un accent particulier sur le paludisme, en fournissant une excellente plate-forme pour la formation et la recherche en maladies tropicales conformes aux normes internationales. Les services comme \textbf{la Clinique, le Laboratoire, la Pharmacie, le Data Management, le Système de Surveillance Démographique et de Santé (SSDS) et les pôles d'appui} sont en son sein.
 			
-			\subsection{Organigramme de l'\gls{urcn}}
+			\subsection{Organigramme de l'URCN}
 			
 			L'Unité de Recherche Clinique de Nanoro est oorganisée de la façon suivante selon le schéma ci-dessous.
 			
@@ -313,7 +295,7 @@
 				
 				C'est le service qui gère l'ensemble des données de l'URCN. Cette section est sous la direction de \textbf{Dr ROUAMBA Toussaint}. Ce service s'occupe de la saisie des données récoltées sur le terrain par les différents agents de terrains et de la gestion des bases de données résultantes. Il est formé par des gestionnaires des bases de dnnées et des agents de saisie.
 				
-				\subsubsection{Système de Surveillance Démgraphique et de la Santé (\gls{ssds})}
+				\subsubsection{Système de Surveillance Démgraphique et de la Santé (SSDS)}
 				
 				Le \textbf{SSDS ou HDSS} (Health and Demography System Surveillance en anglais) est la section chargée de collecter et de mettre à disposition des données populationnelles à jour aux différents projets de recherche de l'unité. Le HDSS est managé par \textbf{Monsieur Karim DERRA Démgraphe} dépuis sa création. Avec son équipe, ils collectent réguilèrement des données, tous les quatre (04) mois, dans les ménages de la zone d'étude. En plus des données démographique, ils collectent des données sanitaires, écnmiques et culturelles par des agents de terrain qui sont chargés de recueillir directement les informations dans les ménages sous la responsabilité de chefs d'équipes, les superviseurs dont le rôle est de contrôler le travail des agents et corriger les  évantuelles erreurs (DERRA et al. 2012).
 				
@@ -327,7 +309,8 @@
 				
 				
 			
-	
+		% Saut de page après la dédicace
+		\newpage
 		\tableofcontents              % Génère la table des matières	
 
 \end{document}
