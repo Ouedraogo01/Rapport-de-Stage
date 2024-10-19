@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.26)  11 OCT 2024 10:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.26)  19 OCT 2024 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1123,11 +1123,24 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabindent=\skip111
 \cfttabnumwidth=\skip112
 )
+(C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.s
+ty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box163
+\beforetitleunit=\skip113
+\aftertitleunit=\skip114
+\ttl@plus=\dimen368
+\ttl@minus=\dimen369
+\ttl@toksa=\toks50
+\titlewidth=\dimen370
+\titlewidthlast=\dimen371
+\titlewidthfirst=\dimen372
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 39
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 49
 .
  (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1135,38 +1148,38 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (Aboubacar.aux)
 \openout1 = `Aboubacar.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Info: Redefining \degres on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Info: Redefining \degres on input line 49.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumerate package,
-(french.ldf)             reported on input line 39.
-LaTeX Info: Redefining \up on input line 39.
-LaTeX Info: Redefining \microtypecontext on input line 39.
-Package microtype Info: Applying patch `item' on input line 39.
-Package microtype Info: Applying patch `toc' on input line 39.
-Package microtype Info: Applying patch `eqnum' on input line 39.
-Package microtype Info: Applying patch `footnote' on input line 39.
-Package microtype Info: Applying patch `verbatim' on input line 39.
+(french.ldf)             reported on input line 49.
+LaTeX Info: Redefining \up on input line 49.
+LaTeX Info: Redefining \microtypecontext on input line 49.
+Package microtype Info: Applying patch `item' on input line 49.
+Package microtype Info: Applying patch `toc' on input line 49.
+Package microtype Info: Applying patch `eqnum' on input line 49.
+Package microtype Info: Applying patch `footnote' on input line 49.
+Package microtype Info: Applying patch `verbatim' on input line 49.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 39.
+LaTeX Info: Redefining \showhyphens on input line 49.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1226,16 +1239,16 @@ Package etoc Warning: Package `tocloft' was loaded after `etoc'.
 f.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count385
-\scratchdimen=\dimen368
-\scratchbox=\box163
+\scratchdimen=\dimen373
+\scratchbox=\box164
 \nofMPsegments=\count386
 \nofMParguments=\count387
-\everyMPshowfont=\toks50
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count388
-\MPscratchDim=\dimen369
+\MPscratchDim=\dimen374
 \MPnumerator=\count389
 \makeMPintoPDFobject=\count390
-\everyMPtoPDFconversion=\toks51
+\everyMPtoPDFconversion=\toks52
 )
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstop
 df-base.sty
@@ -1253,7 +1266,7 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 39.
+or `french'. on input line 49.
 
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/ninecolors\ninecolo
 rs.sty
@@ -1266,48 +1279,48 @@ Package: xparse 2023-10-10 L3 Experimental document command parser
 <isfp.png, id=4, 594.22pt x 594.22pt>
 File: isfp.png Graphic file (type png)
 <use isfp.png>
-Package pdftex.def Info: isfp.png  used on input line 67.
+Package pdftex.def Info: isfp.png  used on input line 77.
 (pdftex.def)             Requested size: 118.84189pt x 118.84189pt.
 <urcn1.png, id=5, 501.875pt x 501.875pt>
 File: urcn1.png Graphic file (type png)
 <use urcn1.png>
-Package pdftex.def Info: urcn1.png  used on input line 84.
+Package pdftex.def Info: urcn1.png  used on input line 98.
 (pdftex.def)             Requested size: 125.46843pt x 125.46843pt.
 
-Overfull \hbox (22.84692pt too wide) in paragraph at lines 56--88
+Overfull \hbox (22.84692pt too wide) in paragraph at lines 66--102
 [][]   [] 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-11.
+13.
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-11.
+13.
 
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-111.
+113.
 
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-111.
+113.
 
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 111.
+(Font)              <17.28> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 111.
+(Font)              <12> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 111.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 111
+(Font)              <10> on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 113
 .
 
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1317,7 +1330,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 111
+LaTeX Font Info:    Trying to load font information for U+msb on input line 113
 .
  (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1326,7 +1339,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (45.8371pt too wide) in paragraph at lines 110--121
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 123.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 123.
+
+Overfull \hbox (45.8371pt too wide) in paragraph at lines 122--133
 []$[]$ $[]$ 
  []
 
@@ -1371,22 +1389,22 @@ ng> <./urcn1.png>]
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
@@ -1403,13 +1421,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
 ] [1
 
 ]
-Chapitre 1.
+Chapitre I.
 [2
 
 ]
-Chapitre 2.
+Chapitre II.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-47.
+59.
 (C:\Users\Aboubacar\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1433,13 +1451,13 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 30235 strings out of 474485
- 660896 string characters out of 5741846
- 1933542 words of memory out of 5000000
- 51913 multiletter control sequences out of 15000+600000
- 623120 words of font info for 142 fonts, out of 8000000 for 9000
+ 30588 strings out of 474485
+ 665841 string characters out of 5741846
+ 1935542 words of memory out of 5000000
+ 52239 multiletter control sequences out of 15000+600000
+ 638135 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,7n,107p,1269b,572s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,7n,107p,1269b,543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Aboubacar/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Aboubacar/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Aboubacar/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1447,9 +1465,9 @@ lm/lmbxi10.pfb><C:/Users/Aboubacar/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/lm/lmr10.pfb><C:/Users/Aboubacar/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/lm/lmr12.pfb><C:/Users/Aboubacar/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/lm/lmri12.pfb>
-Output written on Aboubacar.pdf (14 pages, 301400 bytes).
+Output written on Aboubacar.pdf (14 pages, 308878 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36887 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 45079 words of extra memory for PDF output out of 51595 (max. 10000000)
 
